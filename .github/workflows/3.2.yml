@@ -11,5 +11,5 @@ jobs:
       - name: Wait for Render Deployment
         uses: johnbeynon/render-deploy-action
         with:
-        	service-id: ${{ secrets.some-render-service-id }}
-        	api-key: ${{ secrets.render-api-key }}
+          service-id: ${{ secrets.some-render-service-id }}
+          api-key: ${{ secrets.render-api-key }}
