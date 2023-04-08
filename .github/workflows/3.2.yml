@@ -7,13 +7,13 @@ jobs:
   deploy:
     name: Wait for Deploy
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Wait for Render Deployment
-        uses: leprecon73/render-action@0.6.0
+        uses: bounceapp/render-action@0.6.0
         with:
           render-token: ${{ secrets.RENDER_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          #service-id: srv-cgoo8tou9tun42q1ftig
-          #retries: 20
-          #wait: 16000
-          #sleep: 30004
+          service-id: srv-xxxxxxxxxxxxxxxxxxxx
+          retries: 20
+          wait: 16000
+          sleep: 30000
