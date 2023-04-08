@@ -22,5 +22,5 @@ jobs:
       uses: leprecon73/render-deploy-action@v2
       with:
         username: ${{ secrets.RENDERSERVICEID }}
-        password: ${{ secrets.RENDERAPIKEY }}
+        password: ${{ secrets.RENDERAPIKEY }} 
     
