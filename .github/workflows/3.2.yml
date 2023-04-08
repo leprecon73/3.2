@@ -1,0 +1,4 @@
+uses: leprecon73/render-deploy-action
+with:
+	service-id: ${{ secrets.RENDERSERVICEID }}
+	api-key: ${{ secrets.RENDERAPIKEY }}
