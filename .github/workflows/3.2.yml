@@ -1,26 +1,16 @@
-name: Hey, you! Get off of my cloud!!
-
-on:
-  push:
-    branches:
-      - main
-
-defaults:
-  run:
-    working-directory: '3.2'
-    
+name: Render
+on: [pull_request]
 jobs:
-  publish-to-render:
-    name: Publish image to Render.com
+  deploy:
+    name: Wait for Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-
-    - name: Deploy to Render
-      uses: leprecon73/render-action@0.6.0
-      with:
-        username: ${{ secrets.RENDERSERVICEID }}
-        password: ${{ secrets.RENDERAPIKEY }} 
-    
+      - name: Wait for Render Deployment
+        uses: leprecon73/render-action@0.6.0
+        with:
+          #render-token: ${{ secrets.RENDER_TOKEN }}
+          #github-token: ${{ secrets.GITHUB_TOKEN }}
+          service-id: srv-cgoo8tou9tun42q1ftig
+          retries: 20
+          wait: 16000
+          sleep: 30000
