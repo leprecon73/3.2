@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait for Render Deployment
-        uses: leprecon73/render-action@0.6.0
+        uses: leprecon73/render-deploy-action
         with:
           #render-token: ${{ secrets.RENDER_TOKEN }}
           #github-token: ${{ secrets.GITHUB_TOKEN }}
