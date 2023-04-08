@@ -1,4 +1,26 @@
-uses: leprecon73/render-deploy-action
-with:
-	service-id: ${{ secrets.RENDERSERVICEID }}
-	api-key: ${{ secrets.RENDERAPIKEY }}
+name: Hey, you! Get off of my cloud!
+
+on:
+  push:
+    branches:
+      - main
+
+defaults:
+  run:
+    working-directory: '3.2'
+    
+jobs:
+  publish-to-render:
+    name: Publish image to Render.com
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Deploy to Render
+      uses: leprecon73/render-deploy-action@v2
+      with:
+        username: ${{ secrets.RENDERSERVICEID }}
+        password: ${{ secrets.RENDERAPIKEY }}
+    
