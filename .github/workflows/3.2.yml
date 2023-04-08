@@ -19,7 +19,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Deploy to Render
-      uses: leprecon73/render-deploy-action@v2
+      uses: leprecon73/render-action@0.6.0
       with:
         username: ${{ secrets.RENDERSERVICEID }}
         password: ${{ secrets.RENDERAPIKEY }} 
