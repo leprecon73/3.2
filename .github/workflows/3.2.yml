@@ -13,4 +13,4 @@ jobs:
           service-id: srv-cgoo8tou9tun42q1ftig
           retries: 20
           wait: 16000
-          sleep: 30005
+          sleep: 30004
