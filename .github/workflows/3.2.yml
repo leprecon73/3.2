@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait for Render Deployment
-        uses: johnbeynon/render-deploy-action
+        uses: johnbeynon/render-deploy-action@1
         with:
-          service-id: ${{ secrets.some-render-service-id }}
-          api-key: ${{ secrets.render-api-key }}
+          service-id: ${{ secrets.RENDERSERVICEID }}
+          api-key: ${{ secrets.RENDERAPIKEY }}
